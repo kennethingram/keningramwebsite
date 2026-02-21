@@ -337,12 +337,16 @@ section {
 .about-portrait {
   width: 100%;
   aspect-ratio: 3/4;
-  background: linear-gradient(145deg, #C5D8D4 0%, #9CBFC8 40%, #78A0B5 100%);
+  background-color: #9CBFC8; /* Fallback colour */
+  background-image: url('../img/portrait.jpg');
+  background-size: cover;
+  background-position: center top; /* Keeps face visible */
+  background-repeat: no-repeat;
   position: relative;
   overflow: hidden;
 }
 
-/* Silhouette placeholder art */
+/* Silhouette placeholder — hidden once portrait.jpg is loaded */
 .about-portrait::before {
   content: '';
   position: absolute;
