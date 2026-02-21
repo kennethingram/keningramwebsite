@@ -319,19 +319,6 @@ section {
   overflow: hidden;
 }
 
-/* Silhouette placeholder — hidden once portrait.jpg is loaded */
-.about-portrait::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 55%;
-  height: 90%;
-  background: rgba(30, 25, 24, 0.20);
-  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
-  clip-path: ellipse(50% 55% at 50% 55%);
-}
 
 .about-portrait-frame {
   position: absolute;
