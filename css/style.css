@@ -494,6 +494,13 @@ section {
   margin-bottom: 0.8rem;
 }
 
+.timeline-degree {
+  font-size: 0.82rem;
+  color: var(--mid-stone);
+  margin-bottom: 0.8rem;
+  font-style: italic;
+}
+
 .timeline-desc {
   font-size: 0.92rem;
   color: var(--mid-stone);
