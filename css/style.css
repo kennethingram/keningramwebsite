@@ -254,33 +254,6 @@ a {
   border-color: var(--rose-lt);
 }
 
-.hero-scroll {
-  position: absolute;
-  bottom: 2.5rem;
-  left: 50%;
-  transform: translateX(-50%);
-  z-index: 2;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 0.5rem;
-  animation: fadeUp 1.5s 0.6s ease both;
-}
-
-.hero-scroll span {
-  font-size: 0.62rem;
-  letter-spacing: 0.22em;
-  text-transform: uppercase;
-  color: rgba(255,255,255,0.4);
-}
-
-.scroll-line {
-  width: 1px;
-  height: 48px;
-  background: linear-gradient(to bottom, var(--rose), transparent);
-  animation: scrollPulse 2s ease-in-out infinite;
-}
-
 /* === SECTIONS base === */
 section {
   padding: 7rem 5%;
@@ -346,19 +319,6 @@ section {
   overflow: hidden;
 }
 
-/* Silhouette placeholder — hidden once portrait.jpg is loaded */
-.about-portrait::before {
-  content: '';
-  position: absolute;
-  bottom: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 55%;
-  height: 90%;
-  background: rgba(30, 25, 24, 0.20);
-  border-radius: 50% 50% 0 0 / 40% 40% 0 0;
-  clip-path: ellipse(50% 55% at 50% 55%);
-}
 
 .about-portrait-frame {
   position: absolute;
