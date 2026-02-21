@@ -59,7 +59,7 @@
       const btn = form.querySelector('.form-submit');
       const orig = btn.textContent;
       btn.textContent = 'Sent ✓';
-      btn.style.background = '#C5973E';
+      btn.style.background = '#B8837A';
       btn.disabled = true;
       setTimeout(() => {
         btn.textContent = orig;
