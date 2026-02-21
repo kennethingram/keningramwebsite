@@ -1,6 +1,6 @@
 /* ============================================================
    Ken Ingram Personal Website
-   Palette: soft rose, petal white, warm stone, deep ink
+   Palette: earthy green, worldly blue, cloudy wispy whites
    ============================================================ */
 
 /* --- Reset & Base --- */
@@ -11,13 +11,13 @@
 }
 
 :root {
-  --petal:     #FAF6F4;
-  --blush-bg:  #F2EAE7;
-  --rose:      #B8837A;
-  --rose-lt:   #CB9C94;
-  --stone:     #897E79;
-  --ink:       #1E1918;
-  --mid-stone: #6B6260;
+  --petal:     #F4F8F6;      /* Cloudy white, soft green tint */
+  --blush-bg:  #E5EDE9;      /* Misty sage white */
+  --rose:      #3D7A5C;      /* Earthy forest green – primary accent */
+  --rose-lt:   #5E9E7A;      /* Lighter sage green */
+  --stone:     #2E5C78;      /* Worldly ocean blue – labels */
+  --ink:       #0F1F2D;      /* Deep navy */
+  --mid-stone: #4A6070;      /* Mid blue-slate – body text */
   --white:     #FFFFFF;
   --nav-h:     80px;
   --font-serif: 'Playfair Display', 'Georgia', serif;
@@ -69,8 +69,8 @@ a {
 }
 
 .nav.scrolled {
-  background: rgba(250, 246, 244, 0.97);
-  box-shadow: 0 1px 20px rgba(30, 25, 24, 0.07);
+  background: rgba(244, 248, 246, 0.97);
+  box-shadow: 0 1px 20px rgba(15, 31, 45, 0.07);
 }
 
 .nav-logo {
@@ -153,21 +153,21 @@ a {
   inset: 0;
   background: linear-gradient(
     160deg,
-    #18100F 0%,
-    #241817 35%,
-    #2D1E1C 65%,
-    #18100F 100%
+    #091825 0%,
+    #0E2438 35%,
+    #132C42 65%,
+    #091825 100%
   );
 }
 
-/* Decorative rose overlay */
+/* Decorative overlay */
 .hero-bg::before {
   content: '';
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse 60% 60% at 70% 40%, rgba(184, 131, 122, 0.18) 0%, transparent 70%),
-    radial-gradient(ellipse 40% 50% at 20% 70%, rgba(184, 131, 122, 0.08) 0%, transparent 60%);
+    radial-gradient(ellipse 60% 60% at 70% 40%, rgba(61, 122, 92, 0.18) 0%, transparent 70%),
+    radial-gradient(ellipse 40% 50% at 20% 70%, rgba(46, 92, 120, 0.12) 0%, transparent 60%);
 }
 
 .hero-bg::after {
@@ -179,15 +179,15 @@ a {
       0deg,
       transparent,
       transparent 80px,
-      rgba(184, 131, 122, 0.03) 80px,
-      rgba(184, 131, 122, 0.03) 81px
+      rgba(61, 122, 92, 0.03) 80px,
+      rgba(61, 122, 92, 0.03) 81px
     ),
     repeating-linear-gradient(
       90deg,
       transparent,
       transparent 80px,
-      rgba(184, 131, 122, 0.03) 80px,
-      rgba(184, 131, 122, 0.03) 81px
+      rgba(61, 122, 92, 0.03) 80px,
+      rgba(61, 122, 92, 0.03) 81px
     );
 }
 
@@ -236,7 +236,7 @@ a {
 .hero-cta {
   display: inline-block;
   padding: 0.9rem 2.8rem;
-  border: 1px solid rgba(184, 131, 122, 0.6);
+  border: 1px solid rgba(61, 122, 92, 0.6);
   color: var(--white);
   font-size: 0.72rem;
   font-weight: 500;
@@ -246,7 +246,7 @@ a {
 }
 
 .hero-cta:hover {
-  background: rgba(184, 131, 122, 0.18);
+  background: rgba(61, 122, 92, 0.20);
   border-color: var(--rose-lt);
 }
 
@@ -333,7 +333,7 @@ section {
 .about-portrait {
   width: 100%;
   aspect-ratio: 3/4;
-  background: linear-gradient(145deg, #E8D5CE 0%, #D4B8B2 40%, #B89490 100%);
+  background: linear-gradient(145deg, #C5D8D4 0%, #9CBFC8 40%, #78A0B5 100%);
   position: relative;
   overflow: hidden;
 }
@@ -358,7 +358,7 @@ section {
   left: 1.2rem;
   right: -1.2rem;
   bottom: -1.2rem;
-  border: 1px solid rgba(184, 131, 122, 0.4);
+  border: 1px solid rgba(61, 122, 92, 0.4);
   pointer-events: none;
 }
 
@@ -500,8 +500,8 @@ section {
   gap: 0.7rem;
   margin-top: 1rem;
   padding: 0.6rem 1.2rem;
-  background: linear-gradient(135deg, rgba(184,131,122,0.07), rgba(184,131,122,0.13));
-  border: 1px solid rgba(184, 131, 122, 0.3);
+  background: linear-gradient(135deg, rgba(61,122,92,0.07), rgba(61,122,92,0.13));
+  border: 1px solid rgba(61, 122, 92, 0.3);
 }
 
 .award-icon {
@@ -568,7 +568,7 @@ section {
   width: 600px;
   height: 600px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(184,131,122,0.06) 0%, transparent 70%);
+  background: radial-gradient(circle, rgba(61,122,92,0.09) 0%, transparent 70%);
 }
 
 .expertise-inner {
@@ -598,20 +598,20 @@ section {
 
 .expertise-card {
   background: rgba(255,255,255,0.04);
-  border: 1px solid rgba(184, 131, 122, 0.18);
+  border: 1px solid rgba(61, 122, 92, 0.22);
   padding: 2.8rem 2.2rem;
   transition: border-color var(--transition), background var(--transition);
 }
 
 .expertise-card:hover {
-  border-color: rgba(184, 131, 122, 0.4);
+  border-color: rgba(61, 122, 92, 0.48);
   background: rgba(255,255,255,0.06);
 }
 
 .expertise-card-num {
   font-family: var(--font-serif);
   font-size: 2.8rem;
-  color: rgba(184,131,122,0.3);
+  color: rgba(61,122,92,0.35);
   line-height: 1;
   margin-bottom: 1.2rem;
   font-weight: 400;
@@ -860,13 +860,84 @@ footer {
 .footer-line {
   width: 40px;
   height: 1px;
-  background: rgba(184,131,122,0.3);
+  background: rgba(61,122,92,0.35);
   margin: 0 auto 2rem;
 }
 
 .footer-copy {
   font-size: 0.7rem;
   letter-spacing: 0.1em;
+}
+
+/* === COVERNOTES === */
+.covernotes {
+  background: var(--white);
+  text-align: center;
+}
+
+.covernotes-inner {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+.covernotes-blurb {
+  color: var(--mid-stone);
+  font-size: 1rem;
+  line-height: 1.85;
+  max-width: 640px;
+  margin: 0 auto 3.5rem;
+}
+
+.covernotes-kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5rem;
+  margin-bottom: 3rem;
+}
+
+.kpi-card {
+  padding: 2rem 1rem;
+  border: 1px solid var(--blush-bg);
+  background: var(--petal);
+  transition: border-color var(--transition), transform var(--transition);
+}
+
+.kpi-card:hover {
+  border-color: var(--rose);
+  transform: translateY(-3px);
+}
+
+.kpi-value {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 400;
+  color: var(--rose);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.kpi-label {
+  font-size: 0.65rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--stone);
+}
+
+.covernotes-cta {
+  display: inline-block;
+  padding: 0.9rem 2.8rem;
+  border: 1px solid var(--rose);
+  color: var(--rose);
+  font-size: 0.72rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  transition: background var(--transition), color var(--transition);
+}
+
+.covernotes-cta:hover {
+  background: var(--rose);
+  color: var(--white);
 }
 
 /* === ANIMATIONS === */
@@ -918,6 +989,11 @@ footer {
 
 @media (max-width: 640px) {
   :root { --nav-h: 64px; }
+
+  .covernotes-kpis {
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+  }
 
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
