@@ -5,6 +5,11 @@
 (function () {
   'use strict';
 
+  /* ── Tagline — single source of truth, injected into hero + footer ── */
+  var TAGLINE_ITEMS = ['AI Enablement', 'Technology Transformation', 'Innovation'];
+  var taglineText   = TAGLINE_ITEMS.map(function(s) { return s.toUpperCase(); }).join('\u00A0\u00B7\u00A0');
+  document.querySelectorAll('.site-tagline').forEach(function(el) { el.textContent = taglineText; });
+
   /* ── Sticky nav ── */
   const nav = document.querySelector('.nav');
   function onScroll() {
