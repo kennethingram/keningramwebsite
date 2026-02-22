@@ -65,12 +65,14 @@ a {
   align-items: center;
   justify-content: space-between;
   padding: 0 5%;
+  /* Transparent over dark hero — white text always readable */
+  background: transparent;
   transition: background var(--transition), box-shadow var(--transition);
 }
 
 .nav.scrolled {
-  background: rgba(244, 248, 246, 0.97);
-  box-shadow: 0 1px 20px rgba(15, 31, 45, 0.07);
+  background: var(--petal);
+  box-shadow: 0 1px 20px rgba(15, 31, 45, 0.09);
 }
 
 .nav-logo {
@@ -97,7 +99,7 @@ a {
   font-weight: 500;
   letter-spacing: 0.18em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.85);
   transition: color var(--transition);
   position: relative;
 }
@@ -141,28 +143,23 @@ a {
 .hero {
   min-height: 100vh;
   display: flex;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+  background: var(--ink);
+  text-align: center;
 }
 
 .hero-inner {
-  display: grid;
-  grid-template-columns: 38% 62%;
-  width: 100%;
-  min-height: 100vh;
-}
-
-.hero-text {
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  padding: calc(var(--nav-h) + 3rem) 6% 4rem 8%;
-  background: var(--rose);
+  align-items: center;
+  padding: calc(var(--nav-h) + 4rem) 5% 5rem;
   animation: fadeUp 1.1s ease both;
 }
 
 .hero-name {
   font-family: var(--font-serif);
-  font-size: clamp(2.2rem, 3.5vw, 4rem);
+  font-size: clamp(2.8rem, 6vw, 5.5rem);
   font-weight: 400;
   line-height: 1.1;
   color: var(--white);
@@ -173,30 +170,16 @@ a {
 .hero-divider {
   width: 45px;
   height: 1px;
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.35);
   margin-bottom: 1.6rem;
 }
 
 .hero-tagline {
   font-size: 0.72rem;
-  letter-spacing: 0.16em;
+  letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: rgba(255, 255, 255, 0.75);
+  color: rgba(255, 255, 255, 0.6);
   font-weight: 500;
-  line-height: 2.2;
-}
-
-.hero-portrait-wrap {
-  position: relative;
-  overflow: hidden;
-}
-
-.hero-portrait-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: top center;
-  display: block;
 }
 
 /* === SECTIONS base === */
@@ -878,14 +861,6 @@ footer {
 @media (max-width: 900px) {
   section { padding: 5rem 6%; }
 
-  .hero-inner {
-    grid-template-columns: 42% 58%;
-  }
-
-  .hero-text {
-    padding: calc(var(--nav-h) + 2.5rem) 4% 3rem 6%;
-  }
-
   .about-grid {
     grid-template-columns: 1fr;
     gap: 3rem;
@@ -924,6 +899,7 @@ footer {
   .nav-links { display: none; }
   .nav-hamburger { display: flex; }
 
+  /* Mobile menu drawer — dark to match nav theme */
   .nav-links.open {
     display: flex;
     flex-direction: column;
@@ -931,33 +907,44 @@ footer {
     top: var(--nav-h);
     left: 0;
     right: 0;
-    background: var(--petal);
+    background: var(--ink);
     padding: 2rem 6%;
     gap: 1.5rem;
-    border-top: 1px solid var(--blush-bg);
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.35);
   }
 
-  .nav-links.open a { color: var(--ink); font-size: 0.85rem; }
+  .nav-links.open a {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: 0.85rem;
+  }
+
+  /* When nav is scrolled the open menu should match the scrolled palette */
+  .nav.scrolled .nav-links.open {
+    background: var(--petal);
+    border-top: 1px solid var(--blush-bg);
+    box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+  }
+
+  .nav.scrolled .nav-links.open a { color: var(--ink); }
 
   .about-stats {
     grid-template-columns: 1fr 1fr;
     gap: 1rem;
   }
 
-  /* Mobile hero: green banner stacked above portrait */
+  /* Mobile hero — centred, full width, no changes needed (inherits desktop styles) */
   .hero-inner {
-    grid-template-columns: 1fr;
-    grid-template-rows: auto 1fr;
-    min-height: 100vh;
+    padding: calc(var(--nav-h) + 3rem) 8% 4rem;
   }
 
-  .hero-text {
-    display: flex;
-    padding: calc(var(--nav-h) + 2.5rem) 8% 2.5rem;
-    min-height: unset;
+  .hero-name {
+    font-size: clamp(2.4rem, 11vw, 3.5rem);
   }
 
-  .hero-portrait-wrap {
-    min-height: 55vw;
+  .hero-tagline {
+    font-size: 0.65rem;
+    letter-spacing: 0.14em;
+    line-height: 2;
   }
 }
