@@ -23,7 +23,8 @@
   const navLinks  = document.querySelector('.nav-links');
   if (hamburger && navLinks) {
     hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('open');
+      const expanded = navLinks.classList.toggle('open');
+      hamburger.setAttribute('aria-expanded', expanded);
     });
     // Close on link click
     navLinks.querySelectorAll('a').forEach(a => {
@@ -32,7 +33,7 @@
   }
 
   /* ── Scroll reveal (IntersectionObserver) ── */
-  const reveals = document.querySelectorAll('.timeline-item, .testimonial-card');
+  const reveals = document.querySelectorAll('.timeline-item');
   if ('IntersectionObserver' in window) {
     const observer = new IntersectionObserver(
       (entries) => {
@@ -82,7 +83,7 @@
       fetch(GF_URL, { method: 'POST', mode: 'no-cors', body: data })
         .then(() => {
           btn.textContent      = 'Sent ✓';
-          btn.style.background = 'var(--rose)';
+          btn.style.background = 'var(--stone)';
           form.reset();
           setTimeout(() => {
             btn.textContent      = 'Send Message';
@@ -98,24 +99,8 @@
     });
   }
 
-  /* ── Smooth active nav highlight ── */
-  const sections = document.querySelectorAll('section[id]');
-  const navAs    = document.querySelectorAll('.nav-links a');
-  const sectionObserver = new IntersectionObserver(
-    (entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          navAs.forEach(a => {
-            a.style.color = '';
-            if (a.getAttribute('href') === '#' + entry.target.id) {
-              // subtle active indicator handled via CSS only to keep it light
-            }
-          });
-        }
-      });
-    },
-    { rootMargin: '-40% 0px -40% 0px' }
-  );
-  sections.forEach(s => sectionObserver.observe(s));
+  /* ── Footer year ── */
+  const yearEl = document.getElementById('year');
+  if (yearEl) yearEl.textContent = new Date().getFullYear();
 
 })();
