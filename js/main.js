@@ -56,22 +56,45 @@
     item.style.transitionDelay = `${i * 0.12}s`;
   });
 
-  /* ── Contact form ── */
+  /* ── Contact form → Google Forms ── */
+  // Replace these entry IDs with the real ones from your Google Form.
+  // How to find them: open the form, Ctrl+U (View Source), search "entry."
+  const GF_URL        = 'https://docs.google.com/forms/d/e/1FAIpQLSc2xtz6sCfgTkT1JLH0V38SHulCt4FrZ5h2VNRlVKLh50P8CQ/formResponse';
+  const GF_NAME       = 'entry.REPLACE_NAME';    // ← paste entry ID for Name field
+  const GF_EMAIL      = 'entry.REPLACE_EMAIL';   // ← paste entry ID for Email field
+  const GF_SUBJECT    = 'entry.REPLACE_SUBJECT'; // ← paste entry ID for Subject field
+  const GF_MESSAGE    = 'entry.REPLACE_MESSAGE'; // ← paste entry ID for Message field
+
   const form = document.getElementById('contactForm');
   if (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
-      const btn = form.querySelector('.form-submit');
-      const orig = btn.textContent;
-      btn.textContent = 'Sent ✓';
-      btn.style.background = '#B8837A';
-      btn.disabled = true;
-      setTimeout(() => {
-        btn.textContent = orig;
-        btn.style.background = '';
-        btn.disabled = false;
-        form.reset();
-      }, 3500);
+      const btn  = form.querySelector('.form-submit');
+      const data = new FormData();
+      data.append(GF_NAME,    form.querySelector('#name').value);
+      data.append(GF_EMAIL,   form.querySelector('#email').value);
+      data.append(GF_SUBJECT, form.querySelector('#subject').value);
+      data.append(GF_MESSAGE, form.querySelector('#message').value);
+
+      btn.textContent = 'Sending…';
+      btn.disabled    = true;
+
+      fetch(GF_URL, { method: 'POST', mode: 'no-cors', body: data })
+        .then(() => {
+          btn.textContent      = 'Sent ✓';
+          btn.style.background = 'var(--rose)';
+          form.reset();
+          setTimeout(() => {
+            btn.textContent      = 'Send Message';
+            btn.style.background = '';
+            btn.disabled         = false;
+          }, 3500);
+        })
+        .catch(() => {
+          btn.textContent = 'Send Message';
+          btn.disabled    = false;
+          alert('Something went wrong — please try emailing directly.');
+        });
     });
   }
 
