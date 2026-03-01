@@ -60,10 +60,10 @@
   // Replace these entry IDs with the real ones from your Google Form.
   // How to find them: open the form, Ctrl+U (View Source), search "entry."
   const GF_URL        = 'https://docs.google.com/forms/d/e/1FAIpQLSc2xtz6sCfgTkT1JLH0V38SHulCt4FrZ5h2VNRlVKLh50P8CQ/formResponse';
-  const GF_NAME       = 'entry.REPLACE_NAME';    // ← paste entry ID for Name field
-  const GF_EMAIL      = 'entry.REPLACE_EMAIL';   // ← paste entry ID for Email field
-  const GF_SUBJECT    = 'entry.REPLACE_SUBJECT'; // ← paste entry ID for Subject field
-  const GF_MESSAGE    = 'entry.REPLACE_MESSAGE'; // ← paste entry ID for Message field
+  const GF_NAME       = 'entry.1430970630';
+  const GF_EMAIL      = 'entry.593472319';
+  const GF_SUBJECT    = 'entry.1226788542';
+  const GF_MESSAGE    = 'entry.1989302050';
 
   const form = document.getElementById('contactForm');
   if (form) {
