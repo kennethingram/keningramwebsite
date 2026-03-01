@@ -11,8 +11,8 @@
 }
 
 :root {
-  --petal:     #F4F8F6;      /* Cloudy white, soft green tint */
-  --blush-bg:  #E5EDE9;      /* Misty sage white */
+  --petal:     #E5EEE9;      /* Sage section background — clearly distinct from white */
+  --blush-bg:  #D4E2DB;      /* Misty sage — borders & dividers */
   --rose:      #3D7A5C;      /* Earthy forest green – primary accent */
   --rose-lt:   #5E9E7A;      /* Lighter sage green */
   --stone:     #2E5C78;      /* Worldly ocean blue – labels */
