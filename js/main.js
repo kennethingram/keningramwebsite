@@ -82,7 +82,7 @@
       fetch(GF_URL, { method: 'POST', mode: 'no-cors', body: data })
         .then(() => {
           btn.textContent      = 'Sent ✓';
-          btn.style.background = 'var(--rose)';
+          btn.style.background = 'var(--stone)';
           form.reset();
           setTimeout(() => {
             btn.textContent      = 'Send Message';
