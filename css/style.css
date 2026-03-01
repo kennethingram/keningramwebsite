@@ -142,6 +142,7 @@ a {
 /* === HERO === */
 .hero {
   min-height: 100vh;
+  padding-top: var(--nav-h);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -153,7 +154,7 @@ a {
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: calc(var(--nav-h) + 4rem) 5% 5rem;
+  padding: 4rem 5%;
   animation: fadeUp 1.1s ease both;
 }
 
@@ -935,7 +936,7 @@ footer {
 
   /* Mobile hero — centred, full width, no changes needed (inherits desktop styles) */
   .hero-inner {
-    padding: calc(var(--nav-h) + 3rem) 8% 4rem;
+    padding: 3rem 8%;
   }
 
   .hero-name {
